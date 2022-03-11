@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WAL-JS Challenge-1</title>
+    </head>
+    <body>
+        <script>
+            //Problem 1:
+            //Array
+            const numbersArray = ['apple', 'orange', 'peach'];
+            const [indexZeroEl, indexOneEl, indexTwoEl] = numbersArray;
+            console.log(indexZeroEl);
+            console.log(indexTwoEl);
+            //Object
+            const person = { name: 'abcde', age: 10, gender: 'm' };
+            const { name: extractedName, age: extractedAge } = person;
+            console.log(extractedName);
+            console.log(extractedAge);
+
+            //Problem 2 :
+            //Array
+            const array1 = [1, 2, 3, 4];
+            const array2 = [5, 6, 7, 8];
+            const array3 = [...array1, ...array2];
+            //const array3 = new Array(...array1, ...array2);
+            console.log(array3);
+            //Object
+            const basicDetails = { name: 'abcde', age: 10, gender: 'm' };
+            const educationDetails = { degree: 'xyz', college: 'anc' };
+            const personDetails = { ...basicDetails, ...educationDetails };
+            console.log(personDetails);
+
+            //Problem 3:
+            //Finding largest number in an array
+            function largestNumber(numArray) {
+                let max = numArray[0];
+                for (let i = 0; i < numArray.length; i++) {
+                    if (numArray[i] > max) {
+                        max = numArray[i];
+                    }
+                }
+                return max;
+            }
+            //case1
+            let numArray = [1, 5, 7, 9];
+            let largestNumberInArray = largestNumber(numArray);
+            console.log(largestNumberInArray);
+            //case2
+            numArray = [-1, -5, 0, -100];
+            largestNumberInArray = largestNumber(numArray);
+            console.log(largestNumberInArray);
+
+            //Problem 4:
+            //updating salaries by given percentages
+            let employeesArray = [100, 500, 700, 400];
+            let percent = 10;
+            function updateSalaries(employeesArray, percent) {
+                for (let i = 0; i < employeesArray.length; i++) {
+                    employeesArray[i] =
+                        employeesArray[i] + employeesArray[i] / percent;
+                }
+                return employeesArray;
+            }
+            console.log(updateSalaries(employeesArray, percent));
+        </script>
+    </body>
+</html>

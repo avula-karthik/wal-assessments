@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WAL Js Challenge 2</title>
+    </head>
+    <body>
+        <script>
+            //Problem 1
+            //Finding frequency of char in given string
+            function findFreq(str, char) {
+                let charCount = 0;
+                str = str.toLowerCase();
+                for (let i = 0; i < str.length; i++) {
+                    if (str[i] == char) {
+                        charCount += 1;
+                    }
+                }
+                return charCount;
+            }
+            console.log(
+                findFreq(
+                    'How many times does the character occur in this sentence?',
+                    'm'
+                )
+            );
+            console.log(
+                findFreq(
+                    'How many times does the character occur in this sentence?',
+                    'h'
+                )
+            );
+
+            //Problem 2
+            //Finding whether all elements in an array are same
+            function areAllEqual(arr) {
+                let flag = 0;
+                for (let i = 1; i < arr.length; i++) {
+                    if (arr[0] != arr[i]) {
+                        flag = 1;
+                        break;
+                    }
+                }
+                return flag ? false : true;
+            }
+            console.log(areAllEqual(['test', 'test', 'test']));
+            console.log(areAllEqual([1, 1, 1, 2]));
+
+            //Problem 3
+            //returning last n numbers from an array
+            function subArray(arr, n) {
+                let ouput = n >= arr.length ? arr : arr.slice(-n);
+                return ouput;
+            }
+            let newArray = subArray([1, 2, 3, 4, 5], 5);
+            console.log(newArray);
+        </script>
+    </body>
+</html>
